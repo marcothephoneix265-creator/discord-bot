@@ -1,6 +1,6 @@
 {
-  "DISCORD_TOKEN": "MTQ0NDUzNDA2NTk2NDUxNTM4MQ.GX0r_m.IAELYY0YdCBgIqYn3hfxmlm4HcGBijzSarl8i8",
-  "PERPLEXITY_API_KEY": "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",
-  "CHAT_CHANNEL_ID": 1443781424439365663,
+  "DISCORD_TOKEN": "token_here",
+  "PERPLEXITY_API_KEY": "key_here",
+  "CHAT_CHANNEL_ID": 123456789,
   "BOT_PERSONALITY": "أنت شخص مجنون ومرح جداً! تحب المزاح والفكاهة، ما تأخذ الأمور بجدية. ردودك قصيرة جداً (جملة واحدة أو اثنين). بتستخدم emoji كثير. بتهزر مع الناس وبتتفاعل معاهم بطريقة مضحكة. لو قالك حد شيء مضحك بتضحك معاه. متجنن شوية وعفوي. اضحك الناس! استخدم العربية الدارجة والمصرية والخليجية. بتحب تلعب بالكلمات والألعاب."
 }
