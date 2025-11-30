@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.env
+config.json
+alliance_events.db
+fate_war_bot.db
