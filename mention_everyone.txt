@@ -1,0 +1,57 @@
+# تعديل أمر check_events لإضافة @everyone
+
+# ابحث عن هذا الجزء من الكود في check_events:
+
+                        embed = discord.Embed(
+                            title=f"🎉 بدء الحدث: {event_name}",
+                            description=message or "الحدث بدأ الآن!",
+                            color=discord.Color.green()
+                        )
+                        embed.add_field(name="⏰ وقت البدء", value=event_time, inline=True)
+                        embed.add_field(name="📅 اليوم", value=current_day, inline=True)
+                        embed.add_field(name="🔔 التذكير", value=f"{reminder_minutes} دقيقة", inline=True)
+                        if channel:
+                            await channel.send(embed=embed)
+
+# عدّله ليصير:
+
+                        embed = discord.Embed(
+                            title=f"🎉 بدء الحدث: {event_name}",
+                            description=message or "الحدث بدأ الآن!",
+                            color=discord.Color.green()
+                        )
+                        embed.add_field(name="⏰ وقت البدء", value=event_time, inline=True)
+                        embed.add_field(name="📅 اليوم", value=current_day, inline=True)
+                        embed.add_field(name="🔔 التذكير", value=f"{reminder_minutes} دقيقة", inline=True)
+                        if channel:
+                            await channel.send(f"@everyone 📣", embed=embed)
+
+# وجد هذا الجزء من الكود:
+
+                        try:
+                            reminder_time = (datetime.strptime(event_time, "%H:%M") - timedelta(minutes=reminder_minutes)).strftime("%H:%M")
+                            if current_time == reminder_time:
+                                embed = discord.Embed(
+                                    title=f"⏰ تذكير: {event_name}",
+                                    description=f"الحدث سيبدأ بعد {reminder_minutes} دقيقة!",
+                                    color=discord.Color.orange()
+                                )
+                                embed.add_field(name="📝 الرسالة", value=message or "لا توجد رسالة", inline=False)
+                                embed.add_field(name="⏰ وقت البدء", value=event_time, inline=True)
+                                if channel:
+                                    await channel.send(embed=embed)
+
+# عدّله ليصير:
+
+                        try:
+                            reminder_time = (datetime.strptime(event_time, "%H:%M") - timedelta(minutes=reminder_minutes)).strftime("%H:%M")
+                            if current_time == reminder_time:
+                                embed = discord.Embed(
+                                    title=f"⏰ تذكير: {event_name}",
+                                    description=f"الحدث سيبدأ بعد {reminder_minutes} دقيقة!",
+                                    color=discord.Color.orange()
+                                )
+                                embed.add_field(name="📝 الرسالة", value=message or "لا توجد رسالة", inline=False)
+                                embed.add_field(name="⏰ وقت البدء", value=event_time, inline=True)
+                                if channel:
+                                    await channel.send(f"@everyone ⏰", embed=embed)
